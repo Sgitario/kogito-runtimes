@@ -26,9 +26,18 @@ Quick Links
 Requirements
 ------------
 
+<<<<<<< HEAD
 - [Maven](https://maven.apache.org/) 3.6.2 or later
 - [Java](https://openjdk.java.net/install/) 11 or later (devel package)
 - optional: Docker installation for running integration tests
+=======
+Requirements
+------------
+
+- [Maven](https://maven.apache.org/) 3.6.3 or later
+- [Java](https://openjdk.java.net/install/) 9 or later (devel package)
+
+>>>>>>> 5df29b7a86... Specify requirements for Java
 
 Getting Started
 ---------------
