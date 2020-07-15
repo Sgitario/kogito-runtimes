@@ -23,7 +23,7 @@ pipeline {
         stage('Build kogito-runtimes') {
             steps {
                 script {
-                    maven.runMavenWithSubmarineSettings('clean install', false)
+                    maven.runMavenWithSubmarineSettings('-T 1C -Dsurefire.forkCount=1C clean install', false)
                 }
             }
             post {

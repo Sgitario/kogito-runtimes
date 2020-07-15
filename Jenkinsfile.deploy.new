@@ -39,7 +39,7 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: env.BRANCH_NAME]], browser: [$class: 'GithubWeb', repoUrl: 'git@github.com:kiegroup/kogito-runtimes.git'], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'kogito-runtimes']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'kie-ci-user-key', url: 'git@github.com:kiegroup/kogito-runtimes.git']]])
                 dir("kogito-runtimes") {
                     script {
-                        maven.runMavenWithSubmarineSettings('clean install', false)
+                        maven.runMavenWithSubmarineSettings('-T 1C -Dsurefire.forkCount=1C clean install', false)
                     }
                 }
             }

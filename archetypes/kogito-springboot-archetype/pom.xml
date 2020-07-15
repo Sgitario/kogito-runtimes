@@ -11,6 +11,13 @@
   <packaging>maven-archetype</packaging>
   <name>Kogito :: Maven Archetypes :: SpringBoot</name>
   <description>Kogito based on SpringBoot runtime Archetype</description>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.kie.kogito</groupId>
+      <artifactId>kogito-maven-plugin</artifactId>
+    </dependency>
+  </dependencies>
 
   <build>
     <resources>

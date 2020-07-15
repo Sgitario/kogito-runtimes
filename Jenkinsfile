@@ -33,7 +33,7 @@ pipeline {
                 dir("kogito-runtimes") {
                     script {
                         githubscm.checkoutIfExists('kogito-runtimes', changeAuthor, changeBranch, 'kiegroup', changeTarget, true)
-                        maven.runMavenWithSubmarineSettings('clean install -Prun-code-coverage', false)
+                        maven.runMavenWithSubmarineSettings('-T 1C -Dsurefire.forkCount=1C clean install -Prun-code-coverage', false)
                         /*
                            The analysis must happen before the other stages as these clone different projects into a root
                            directory of kogito-runtimes and are by mistake incorporated in a test coverage report.
